@@ -13,10 +13,24 @@ from step4_hybrid_retriever import (
 
 load_dotenv()
 
-GEMINI_KEYS = [k for k in [
-    os.getenv("GEMINI_API_KEY"), os.getenv("GEMINI_API_KEY_BACKUP")] if k]
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-HF_TOKEN = os.getenv("HF_TOKEN")
+
+def _get_secret(key_name):
+    val = os.getenv(key_name)
+    if not val:
+        try:
+            import streamlit as st
+            val = st.secrets.get(key_name)
+        except Exception:
+            pass
+    if val:
+        os.environ[key_name] = str(val)
+    return val
+
+
+GEMINI_KEYS = [k for k in [_get_secret(
+    "GEMINI_API_KEY"), _get_secret("GEMINI_API_KEY_BACKUP")] if k]
+GROQ_API_KEY = _get_secret("GROQ_API_KEY")
+HF_TOKEN = _get_secret("HF_TOKEN")
 DISCOVERED_GROQ_MODELS = []
 MODEL_ROTATION_COUNTER = 0
 
