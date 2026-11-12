@@ -11,7 +11,6 @@ from concurrent.futures import ThreadPoolExecutor
 
 os.environ["TRANSFORMERS_NO_TORCHVISION"] = "1"
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-os.environ["HF_HUB_OFFLINE"] = "1"
 warnings.filterwarnings("ignore")
 
 
@@ -66,7 +65,6 @@ def get_figure_metadata(img_path):
 
 
 def inspect_figure_with_vision_ai(task):
-    """Inspects the actual cropped image pixels via Groq Llama-4 Vision or Gemini Vision for unique title & explanation."""
     img_path, doc_title, page_num, fig_num, near_text = task
     try:
         with open(img_path, "rb") as f:
@@ -88,8 +86,6 @@ def inspect_figure_with_vision_ai(task):
     )
 
     raw_reply = None
-
-    # 1. Try Groq Vision (Llama-4-Scout / Maverick have independent TPM buckets!)
     groq_key = os.getenv("GROQ_API_KEY")
     if groq_key:
         try:
@@ -114,7 +110,6 @@ def inspect_figure_with_vision_ai(task):
         except Exception:
             pass
 
-    # 2. Try Google Gemini Vision (gemini-3.5-flash-lite / gemini-2.5-flash)
     if not raw_reply:
         gemini_keys = [k for k in [
             os.getenv("GEMINI_API_KEY"), os.getenv("GEMINI_API_KEY_BACKUP")] if k]
@@ -159,24 +154,15 @@ def get_models():
         from langchain_huggingface import HuggingFaceEmbeddings
         from sentence_transformers import CrossEncoder
         device = "cuda" if torch.cuda.is_available() else "cpu"
-        try:
-            DB_CACHE["lc_embed_model"] = HuggingFaceEmbeddings(
-                model_name="BAAI/bge-base-en-v1.5",
-                model_kwargs={"device": device, "local_files_only": True},
-                encode_kwargs={"normalize_embeddings": True, "batch_size": 32}
-            )
-            DB_CACHE["reranker_model"] = CrossEncoder(
-                "cross-encoder/ms-marco-MiniLM-L-6-v2", max_length=256, device=device, local_files_only=True
-            )
-        except Exception:
-            os.environ.pop("HF_HUB_OFFLINE", None)
-            DB_CACHE["lc_embed_model"] = HuggingFaceEmbeddings(
-                model_name="BAAI/bge-base-en-v1.5",
-                model_kwargs={"device": device},
-                encode_kwargs={"normalize_embeddings": True, "batch_size": 32}
-            )
-            DB_CACHE["reranker_model"] = CrossEncoder(
-                "cross-encoder/ms-marco-MiniLM-L-6-v2", max_length=256, device=device)
+
+        DB_CACHE["lc_embed_model"] = HuggingFaceEmbeddings(
+            model_name="BAAI/bge-base-en-v1.5",
+            model_kwargs={"device": device},
+            encode_kwargs={"normalize_embeddings": True, "batch_size": 32}
+        )
+        DB_CACHE["reranker_model"] = CrossEncoder(
+            "cross-encoder/ms-marco-MiniLM-L-6-v2", max_length=256, device=device
+        )
     return DB_CACHE["lc_embed_model"], DB_CACHE["reranker_model"]
 
 
@@ -326,7 +312,6 @@ def get_chunks_by_source(source_name, max_chunks=9):
 
 
 def extract_cropped_figures_from_page(page, doc_title, page_num):
-    """Captures up to 8 stitched raster photos & vector diagrams per page in 1400px HD."""
     import fitz
     from PIL import Image, ImageFilter
 
