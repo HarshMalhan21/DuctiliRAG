@@ -10,8 +10,8 @@ plotly
 pymupdf
 Pillow
 python-dotenv
-google-genai
-groq
+google-genai>=1.20.0
+groq>=0.15.0
 huggingface_hub
 langchain-core
 langchain-community
