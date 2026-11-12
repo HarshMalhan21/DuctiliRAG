@@ -23,7 +23,8 @@ def _get_secret(key_name):
         except Exception:
             pass
     if val:
-        os.environ[key_name] = str(val)
+        val = str(val).strip().strip('"').strip("'")
+        os.environ[key_name] = val
     return val
 
 
@@ -32,14 +33,13 @@ GEMINI_KEYS = [k for k in [_get_secret(
 GROQ_API_KEY = _get_secret("GROQ_API_KEY")
 HF_TOKEN = _get_secret("HF_TOKEN")
 DISCOVERED_GROQ_MODELS = []
-MODEL_ROTATION_COUNTER = 0
+LAST_LLM_ERROR = ""
 
 
 def clean_and_render_math(markdown_text, source_list=None):
     r"""Converts \(...\) and \[...\] into Streamlit KaTeX $...$ / $$...$$, removes <br>, and prevents nested $ errors."""
     text = markdown_text
 
-    # 1. Replace literal <br> tags (use ' • ' inside Markdown table rows, newline outside tables)
     fixed_lines = []
     for line in text.split("\n"):
         if "|" in line:
@@ -49,19 +49,16 @@ def clean_and_render_math(markdown_text, source_list=None):
         fixed_lines.append(line)
     text = "\n".join(fixed_lines)
 
-    # 2. Convert HTML <sub> and <sup> tags into readable math notation
     text = re.sub(r"<sub>\s*([^<]+?)\s*</sub>",
                   r"_{\1}", text, flags=re.IGNORECASE)
     text = re.sub(r"<sup>\s*([^<]+?)\s*</sup>",
                   r"^{\1}", text, flags=re.IGNORECASE)
 
-    # 3. Convert LaTeX \[ ... \] -> $$ ... $$ and \( ... \) -> $ ... $
     text = re.sub(r"\\\[\s*(.*?)\s*\\\]",
                   lambda m: f"\n$$\n{m.group(1).strip()}\n$$\n", text, flags=re.DOTALL)
     text = re.sub(r"\\\(\s*(.*?)\s*\\\)",
                   lambda m: f"${m.group(1).strip()}$", text)
 
-    # 4. Catch standalone bracketed equations like [ S_f = A , N^{-b} ] on their own line
     text = re.sub(
         r"^\s*\[\s*([A-Za-z0-9_\\]+?\s*=[^\[\]\n]+?)\s*\]\s*$",
         lambda m: f"$$\n{m.group(1).strip()}\n$$",
@@ -69,7 +66,6 @@ def clean_and_render_math(markdown_text, source_list=None):
         flags=re.MULTILINE
     )
 
-    # 5. Wrap raw parenthesized LaTeX like (\frac{\sigma_a}{S_e} = 1) ONLY when outside existing $...$ blocks!
     math_token_pattern = re.compile(
         r"(\$\$.*?\$\$|\$[^$\n]+\$)", flags=re.DOTALL)
     segments = math_token_pattern.split(text)
@@ -88,7 +84,6 @@ def clean_and_render_math(markdown_text, source_list=None):
     text = "".join(segments)
     text = text.replace(r"\dfrac", r"\frac")
 
-    # 6. Strip trailing (Source X) or [Page X] citation tags
     text = re.sub(
         r"\s*[\[\(]([^\[\]\(\)$\\]*?(?:Page|Pages|Section|Sections|Source|Excerpt|Case Study|Reference|slides_|NASA_|ASTM_|Historical_|Rolling)[^\[\]\(\)$\\]*?)[\]\)]",
         "",
@@ -114,86 +109,101 @@ def get_active_groq_models(groq_client):
                 "embed", "playai", "scout", "maverick")
         chat = [mid for mid in all_ids if not any(
             w in mid.lower() for w in skip)]
-        order = ["llama-3.3", "gpt-oss-120b", "gpt-oss-20b",
-                 "llama-3.1", "qwen", "gemma", "allam"]
+        # Prioritize flagship 120B -> Qwen 3.8 27B -> GPT-OSS 20B
+        order = ["gpt-oss-120b", "qwen3.8",
+                 "gpt-oss-20b", "llama-3.3", "minimax", "muse"]
         chat.sort(key=lambda m: next(
             (i for i, p in enumerate(order) if p in m.lower()), 99))
         DISCOVERED_GROQ_MODELS = chat[:4]
     except Exception:
-        DISCOVERED_GROQ_MODELS = []
+        DISCOVERED_GROQ_MODELS = ["openai/gpt-oss-120b",
+                                  "openai/gpt-oss-20b", "qwen/qwen3.8-27b"]
     return DISCOVERED_GROQ_MODELS
 
 
 def call_llm_with_fallback(system_instruction, user_prompt):
-    global MODEL_ROTATION_COUNTER
-    if GROQ_API_KEY:
+    global LAST_LLM_ERROR
+    errors = []
+
+    groq_key = _get_secret("GROQ_API_KEY")
+    if groq_key:
         try:
             from groq import Groq
-            g_client = Groq(api_key=GROQ_API_KEY, timeout=18.0, max_retries=0)
-            base_models = get_active_groq_models(g_client)
-            if base_models:
-                rot = MODEL_ROTATION_COUNTER % min(2, len(base_models))
-                MODEL_ROTATION_COUNTER += 1
-                ordered_models = base_models[rot:] + base_models[:rot]
-                for g_model in ordered_models:
-                    is_qwen = "qwen" in g_model.lower()
-                    tok_limit = 950 if is_qwen else 2400
-                    sys_msg = (
-                        "/no_think\n" + system_instruction) if is_qwen else system_instruction
-                    try:
-                        resp = g_client.chat.completions.create(
-                            model=g_model,
-                            messages=[{"role": "system", "content": sys_msg}, {
-                                "role": "user", "content": user_prompt}],
-                            temperature=0.0,
-                            max_tokens=tok_limit
-                        )
-                        text = resp.choices[0].message.content
-                        if text:
-                            text = re.sub(r"<think>.*?</think>",
-                                          "", text, flags=re.DOTALL).strip()
-                            if len(text) > 100:
-                                return text, f"groq/{g_model}"
-                    except Exception as e:
-                        print(
-                            f" [Groq Switch] {g_model} -> next ({str(e)[:80]})")
-        except Exception:
-            pass
+            g_client = Groq(api_key=groq_key, timeout=22.0, max_retries=0)
+            for g_model in get_active_groq_models(g_client):
+                is_qwen = "qwen" in g_model.lower()
+                sys_msg = (
+                    "/no_think\n" + system_instruction) if is_qwen else system_instruction
+                try:
+                    resp = g_client.chat.completions.create(
+                        model=g_model,
+                        messages=[{"role": "system", "content": sys_msg}, {
+                            "role": "user", "content": user_prompt}],
+                        temperature=0.0,
+                        max_tokens=1500
+                    )
+                    text = resp.choices[0].message.content
+                    if text:
+                        text = re.sub(r"<think>.*?</think>", "",
+                                      text, flags=re.DOTALL).strip()
+                        if len(text) > 80:
+                            return text, f"groq/{g_model}"
+                except Exception as e:
+                    errors.append(f"Groq({g_model}): {str(e)[:90]}")
+        except Exception as e:
+            errors.append(f"GroqInit: {str(e)[:90]}")
+    else:
+        errors.append("GROQ_API_KEY missing")
 
-    for api_key in GEMINI_KEYS:
-        client = genai.Client(
-            api_key=api_key, http_options=types.HttpOptions(timeout=15000))
-        for g_model in ["gemini-3.5-flash-lite", "gemini-2.5-flash", "gemini-3.8-flash"]:
+    # Frontier Gemini 3 Models (3.8 Flash -> 3.6 Flash -> 3.5 Flash-Lite)
+    gemini_keys = [k for k in [_get_secret(
+        "GEMINI_API_KEY"), _get_secret("GEMINI_API_KEY_BACKUP")] if k]
+    if gemini_keys:
+        for api_key in gemini_keys:
             try:
-                resp = client.models.generate_content(
-                    model=g_model, contents=user_prompt,
-                    config=types.GenerateContentConfig(
-                        system_instruction=system_instruction, temperature=0.0)
-                )
-                if resp.text:
-                    return resp.text.strip(), g_model
-            except Exception:
-                continue
+                client = genai.Client(
+                    api_key=api_key, http_options=types.HttpOptions(timeout=20000))
+                for g_model in ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite"]:
+                    try:
+                        resp = client.models.generate_content(
+                            model=g_model,
+                            contents=user_prompt,
+                            config=types.GenerateContentConfig(
+                                system_instruction=system_instruction, temperature=0.0)
+                        )
+                        if resp.text:
+                            return resp.text.strip(), g_model
+                    except Exception as e:
+                        errors.append(f"Gemini({g_model}): {str(e)[:90]}")
+            except Exception as e:
+                errors.append(f"GeminiInit: {str(e)[:90]}")
+    else:
+        errors.append("GEMINI_API_KEY missing")
 
-    if HF_TOKEN:
+    # Hugging Face Frontier Open-Weight Models
+    hf_token = _get_secret("HF_TOKEN")
+    if hf_token:
         try:
             from huggingface_hub import InferenceClient
-            hf_client = InferenceClient(api_key=HF_TOKEN, timeout=15.0)
+            hf_client = InferenceClient(api_key=hf_token, timeout=20.0)
             for hf_model in ["Qwen/Qwen2.5-72B-Instruct", "meta-llama/Llama-3.3-70B-Instruct"]:
                 try:
                     resp = hf_client.chat.completions.create(
                         model=hf_model,
                         messages=[{"role": "system", "content": system_instruction}, {
                             "role": "user", "content": user_prompt}],
-                        temperature=0.0, max_tokens=2200
+                        temperature=0.0,
+                        max_tokens=1600
                     )
                     if resp.choices[0].message.content:
                         return resp.choices[0].message.content.strip(), f"hf/{hf_model}"
-                except Exception:
-                    continue
-        except Exception:
-            pass
+                except Exception as e:
+                    errors.append(f"HF({hf_model}): {str(e)[:90]}")
+        except Exception as e:
+            errors.append(f"HFInit: {str(e)[:90]}")
 
+    LAST_LLM_ERROR = " | ".join(errors[-3:])
+    print(f" [ALL LLM PROVIDERS FAILED] {LAST_LLM_ERROR}")
     return "RATE_LIMIT_ERROR", "none"
 
 
