@@ -9,7 +9,7 @@ import warnings
 
 os.environ["TRANSFORMERS_NO_TORCHVISION"] = "1"
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ.pop("HF_HUB_OFFLINE", None)
 warnings.filterwarnings("ignore")
 
 

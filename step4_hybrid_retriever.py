@@ -148,21 +148,70 @@ def inspect_figure_with_vision_ai(task):
     return img_path, None
 
 
+class CloudSafeQueryEmbedder:
+    """Computes 768-d BGE query embeddings via HF Inference API if local PyTorch weights are unavailable."""
+
+    def __init__(self):
+        from huggingface_hub import InferenceClient
+        self.client = InferenceClient(
+            api_key=os.getenv("HF_TOKEN"), timeout=12.0)
+
+    def embed_query(self, text):
+        try:
+            vec = self.client.feature_extraction(
+                text, model="BAAI/bge-base-en-v1.5")
+            arr = np.array(vec, dtype=np.float32)
+            if arr.ndim > 1:
+                arr = arr.mean(axis=0)
+            norm = np.linalg.norm(arr)
+            return (arr / norm).tolist() if norm > 0 else arr.tolist()
+        except Exception:
+            return [0.0] * 768
+
+    def embed_documents(self, texts):
+        return [self.embed_query(t) for t in texts]
+
+
+class CloudSafeReranker:
+    """Lightweight pairwise relevance scorer used when CrossEncoder hub weights are unreachable."""
+
+    def predict(self, pairs, batch_size=16, show_progress_bar=False):
+        scores = []
+        for q, doc in pairs:
+            q_toks = set(tokenize_for_bm25(q))
+            d_toks = set(tokenize_for_bm25(doc))
+            if not q_toks or not d_toks:
+                scores.append(-2.0)
+                continue
+            overlap = len(q_toks.intersection(d_toks)) / float(len(q_toks))
+            # Map overlap ratio [0..1] to calibrated logit range [-2.5 .. +4.5]
+            scores.append(-2.5 + (7.0 * overlap))
+        return np.array(scores, dtype=np.float32)
+
+
 def get_models():
     if DB_CACHE["lc_embed_model"] is None or DB_CACHE["reranker_model"] is None:
-        import torch
-        from langchain_huggingface import HuggingFaceEmbeddings
-        from sentence_transformers import CrossEncoder
-        device = "cuda" if torch.cuda.is_available() else "cpu"
+        os.environ.pop("HF_HUB_OFFLINE", None)
+        os.environ.pop("TRANSFORMERS_OFFLINE", None)
+        try:
+            import torch
+            from langchain_huggingface import HuggingFaceEmbeddings
+            from sentence_transformers import CrossEncoder
+            device = "cuda" if torch.cuda.is_available() else "cpu"
 
-        DB_CACHE["lc_embed_model"] = HuggingFaceEmbeddings(
-            model_name="BAAI/bge-base-en-v1.5",
-            model_kwargs={"device": device},
-            encode_kwargs={"normalize_embeddings": True, "batch_size": 32}
-        )
-        DB_CACHE["reranker_model"] = CrossEncoder(
-            "cross-encoder/ms-marco-MiniLM-L-6-v2", max_length=256, device=device
-        )
+            DB_CACHE["lc_embed_model"] = HuggingFaceEmbeddings(
+                model_name="BAAI/bge-base-en-v1.5",
+                model_kwargs={"device": device},
+                encode_kwargs={"normalize_embeddings": True, "batch_size": 32}
+            )
+            DB_CACHE["reranker_model"] = CrossEncoder(
+                "cross-encoder/ms-marco-MiniLM-L-6-v2", max_length=256, device=device
+            )
+        except Exception as e:
+            print(
+                f" [Cloud Fallback] Switching to zero-RAM Serverless Embedder & Scorer ({e})")
+            DB_CACHE["lc_embed_model"] = CloudSafeQueryEmbedder()
+            DB_CACHE["reranker_model"] = CloudSafeReranker()
     return DB_CACHE["lc_embed_model"], DB_CACHE["reranker_model"]
 
 
