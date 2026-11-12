@@ -1,0 +1,10 @@
+{
+    "total_questions": 12,
+    "pure_chroma_recall_at_3": 66.7,
+    "pure_chroma_mrr": 62.5,
+    "pure_bm25_recall_at_3": 75.0,
+    "pure_bm25_mrr": 63.9,
+    "hybrid_rrf_recall_at_3": 91.7,
+    "hybrid_rrf_mrr": 83.3,
+    "generation_faithfulness": 100.0
+}

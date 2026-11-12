@@ -1,0 +1,22 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+streamlit
+pandas
+numpy
+scikit-learn
+shap
+joblib
+plotly
+pymupdf
+Pillow
+python-dotenv
+google-genai
+groq
+huggingface_hub
+langchain-core
+langchain-community
+langchain-huggingface
+langchain-chroma
+chromadb
+sentence-transformers
+rank-bm25

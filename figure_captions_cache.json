@@ -1,0 +1,274 @@
+{
+  "extracted_figures\\slides_failurefatigue_Page_1_Fig_3.png": {
+    "title": "Fatigue Fracture Surface Morphology \u2014 Figure 3 (Page 1)",
+    "explanation": "Macroscopic fracture surface illustrating Stage I microcrack initiation at surface/keyway stress raisers (Zone A), Stage II progressive cyclic beach-mark propagation (Zone B), and Stage III fast overload fracture (Zone C)."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_2_Fig_1.png": {
+    "title": "R. R. Moore Rotating-Beam Fatigue Testing Apparatus (Page 2)",
+    "explanation": "Schematic of the high-speed rotating-beam fatigue machine subjecting a test specimen to pure bending via suspended weights while recording stress cycles to failure."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_2_Fig_2.png": {
+    "title": "R. R. Moore Rotating-Beam Fatigue Testing Apparatus (Page 2)",
+    "explanation": "Schematic of the high-speed rotating-beam fatigue machine subjecting a test specimen to pure bending via suspended weights while recording stress cycles to failure."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_3_Fig_2.png": {
+    "title": "Low\u2011Cycle vs High\u2011Cycle Fatigue Regions on S\u2011N Diagram",
+    "explanation": "This schematic illustrates the division of the S\u2011N curve into low\u2011cycle fatigue (N \u2264 10\u00b3) and high\u2011cycle fatigue (N > 10\u00b3) regimes for steels, indicating the transition from finite\u2011life to infinite\u2011life behavior. The diagram emphasizes that the endurance limit lies between 10\u2076 and 10\u2077 cycles for typical steel alloys."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_4_Fig_3.png": {
+    "title": "S\u2011N Bands and Endurance Limit Ratios for Aluminum Alloys",
+    "explanation": "The figure overlays S\u2011N bands for selected aluminum alloys with curves of endurance limit versus tensile strength, highlighting the lack of a horizontal plateau and the varying S_e/S_ut ratios. It reinforces that aluminum alloys lack a true endurance limit, requiring fatigue strength to be specified at a finite cycle count."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_14_Fig_2.png": {
+    "title": "Fluctuating Stress Failure Envelope & Load Line Diagram (Page 14)",
+    "explanation": "Fatigue diagram plotting alternating stress (sigma_a) against midrange mean stress (sigma_m), comparing Soderberg, Modified Goodman, Gerber, and yield failure boundaries."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_16_Fig_1.png": {
+    "title": "Fluctuating Stress Failure Envelope & Load Line Diagram (Page 16)",
+    "explanation": "Fatigue diagram plotting alternating stress (sigma_a) against midrange mean stress (sigma_m), comparing Soderberg, Modified Goodman, Gerber, and yield failure boundaries."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_16_Fig_3.png": {
+    "title": "Fluctuating Stress Failure Envelope & Load Line Diagram (Page 16)",
+    "explanation": "Fatigue diagram plotting alternating stress (sigma_a) against midrange mean stress (sigma_m), comparing Soderberg, Modified Goodman, Gerber, and yield failure boundaries."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_15_Fig_2.png": {
+    "title": "Fluctuating Stress Failure Envelope & Load Line Diagram (Page 15)",
+    "explanation": "Fatigue diagram plotting alternating stress (sigma_a) against midrange mean stress (sigma_m), comparing Soderberg, Modified Goodman, Gerber, and yield failure boundaries."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_16_Fig_4.png": {
+    "title": "Fluctuating Stress Failure Envelope & Load Line Diagram (Page 16)",
+    "explanation": "Fatigue diagram plotting alternating stress (sigma_a) against midrange mean stress (sigma_m), comparing Soderberg, Modified Goodman, Gerber, and yield failure boundaries."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_25_Fig_1.png": {
+    "title": "Comparative macro-schematic of brittle versus ductile tensile fracture modes (Page 25)",
+    "explanation": "This schematic illustrates the contrasting failure behaviors of materials under tensile stress, showing a flat, jagged cleavage surface typical of brittle fracture (center) alongside significant localized necking and plastic deformation characteristic of ductile fracture (right). The cross (+) markers indicate gauge reference positions that highlight the macroscopic elongation and deformation differences between the two failure types."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_26_Fig_1.png": {
+    "title": "Fatigue fracture surface showing distinct beach marks and growth zones (Page 26)",
+    "explanation": "This image displays a metal component's fracture cross-section exhibiting classic fatigue failure features, including crack propagation lines radiating outward from the initiation site. The macroscopic examination reveals progressive cyclic loading damage across the principal stress area prior to final overload rupture."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_26_Fig_2.png": {
+    "title": "Cup-and-cone fracture surface of an aluminum tensile specimen (Page 26)",
+    "explanation": "This image illustrates a classic ductile failure resulting from uniaxial tensile testing of an aluminum component, distinctly displaying the characteristic cup-and-cone fracture morphology with significant plastic deformation and necking."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_26_Fig_3.png": {
+    "title": "Macrograph of a flat, crystalline brittle fracture surface in a threaded fastener (Page 26)",
+    "explanation": "This image shows the matching fracture surfaces of a failed threaded bolt, exhibiting a flat, crystalline texture and lack of macroscopic plastic deformation characteristic of brittle failure. The coarse, granular appearance indicates rapid crack propagation perpendicular to the tensile stress axis without significant energy absorption."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_29_Fig_1.png": {
+    "title": "Ductile Stress-Strain Curve Highlighting Ultimate Tensile Strength and Fracture (Page 29)",
+    "explanation": "This image displays the final segment of a ductile material stress-strain curve, illustrating the region leading up to failure. Visible labels include the curve representing ductile behavior, the point of fracture, and the horizontal axis denoting strain."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_30_Fig_1.png": {
+    "title": "Charpy Toughness-Temperature Curve Illustrating the Ductile-to-Brittle Transition (Page 30)",
+    "explanation": "This graph illustrates the variation of Charpy toughness with temperature, showing low toughness and brittle behavior at low temperatures that transitions to high toughness and ductile behavior at higher temperatures. It highlights the critical transition temperature where the material's fracture mode significantly changes."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_39_Fig_1.png": {
+    "title": "Schematic of a fatigue fracture surface showing beach marks (Page 39)",
+    "explanation": "This diagram illustrates a typical fatigue failure surface on a cylindrical component, featuring the origin of the fracture and concentric clamshell markings (beach marks) that expand outward from the initiation site. The smooth, striped region represents slow crack propagation under cyclic loading, while the large textured area indicates the final sudden overload rupture."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_39_Fig_2.png": {
+    "title": "Macro-fractograph of a fatigue-failed threaded bolt inside a nut (Page 39)",
+    "explanation": "This macro-fractograph displays the characteristic cross-sectional fracture surface of a threaded fastener failure, featuring distinct labeled zones including the smooth fatigue propagation region and the rough final fracture region. The visible topography provides forensic evidence of cyclic mechanical loading leading to progressive crack growth until sudden overload failure occurred."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_40_Fig_1.png": {
+    "title": "Macrograph of a railhead fatigue fracture showing beach marks (Page 40)",
+    "explanation": "This macro-fractograph displays the characteristic fatigue progression zone of a failed railway rail head. The fine, textured beach marks radiating inward from the initiation site illustrate progressive mechanical fatigue failure under cyclic loading."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_41_Fig_1.png": {
+    "title": "Fracture surface of a rolling stock component with fatigue beach marks (Page 41)",
+    "explanation": "This image displays a macro-fractographic view of a fatigue failure surface characterized by distinct concentric curved contours known as fatigue propagation beach marks. These markings trace the progressive advance of a crack under cyclic mechanical loading prior to final component separation."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_42_Fig_1.png": {
+    "title": "Fatigue Fracture Surface of a Rotating Shaft with Keyway Stress Concentration (Page 42)",
+    "explanation": "This fractograph displays a classic rotating bending fatigue failure originating from a stress-concentrating keyway notch at the top, showing prominent beach marks that propagate outward until final overstress rupture occurs on the lower right."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_43_Fig_1.png": {
+    "title": "Macro-fractograph of rail steel showing multiple ratchet marks (Page 43)",
+    "explanation": "This image displays a fracture surface with multiple parallel surface cracks indicated by blue arrows, serving as classic ratchet marks typical of high-cycle fatigue failure. These distinct initiation sites demonstrate how cyclic bending stresses nucleated fatigue cracks from multiple points along the component boundary before propagating inward."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_43_Fig_2.png": {
+    "title": "Fracture surface of rolling stock component showing fatigue beach marks (Page 43)",
+    "explanation": "This fractograph displays a fatigue failure mechanism characterized by crack nucleation sites with ratchet marks, a central fatigue crack propagation zone featuring beach marks, and a final flexion fracture region. The magnified inset highlights the direction of crack propagation advancing away from the origin zone."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_44_Fig_1.png": {
+    "title": "Macrograph of torsional fatigue fracture surface inside a hub shaft (Page 44)",
+    "explanation": "This image shows a classic torsional fatigue failure surface on a shaft section, displaying progressive crack propagation features and beach marks originating from the outer surface under cyclic shear stress."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_45_Fig_1.png": {
+    "title": "Splined shaft torsional fatigue fracture showing radial ridges (Page 45)",
+    "explanation": "This macro-fractograph displays the failure surface of a splined steel shaft subjected to reversed torsional fatigue. The fracture exhibits characteristic radial ridges and shear deformation patterns converging toward the center of the cross-section."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_45_Fig_2.png": {
+    "title": "Splined Shaft Failure Originating from Keyway via Reversed Torsion (Page 45)",
+    "explanation": "This image shows a failed splined shaft featuring prominent cracks that initiated at a 45-degree angle from the keyway. The surface morphology and cracking pattern illustrate the characteristic progression of reversed torsional fatigue in heavy rolling stock components."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_1_Fig_1.png": {
+    "title": "Fractured metal component revealing fatigue beach marks and final brittle zone (Page 1)",
+    "explanation": "This fractograph displays a fatigue failure surface characterized by concentric beach marks originating from a specific failure site and propagating outward until a final brittle fracture zone occurs. The visible labels identify the failure origin, the smooth velvety fatigue zone with beach marks, and the rough final fracture zone resulting from sudden overload."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_1_Fig_2.png": {
+    "title": "Macro-fracture surface of a threaded steel bolt showing fatigue zones (Page 1)",
+    "explanation": "This fractograph displays the distinct regions of a fatigue failure in a threaded fastener, clearly marking the crack initiation site (A), the progressive fatigue propagation zone with beach marks (B), and the final sudden overload fracture region (C)."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_2_Fig_3.png": {
+    "title": "Fatigue fracture surface of a cylindrical component showing multiple initiation sites (Page 2)",
+    "explanation": "This macrograph displays a fatigue fracture surface featuring initiation sites labeled B at a notch or stress raiser and secondary features at C. The concentric beach marks propagating outward illustrate progressive cyclic loading failure over time."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_2_Fig_4.png": {
+    "title": "Fracture surface of a forged connecting-rod showing fatigue failure (Page 2)",
+    "explanation": "This macrograph displays the distinct fracture surface of a failed mechanical component under cyclic loading, featuring a circular oil lubrication hole that acted as the primary stress concentration site. The rough, textured topography running outward from the left shows classic fatigue crack propagation leading to final overload fracture on the right."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_2_Fig_5.png": {
+    "title": "Circular fatigue fracture surface showing smooth propagation and rapid final rupture zones (Page 2)",
+    "explanation": "This fractograph displays a classic rotating-beam fatigue failure in a circular cross-section, characterized by a smooth, concentrically rubbed fatigue crack growth zone surrounding an off-center origin and a coarse, radially striated final fast-fracture zone covering the remaining area."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_2_Fig_6.png": {
+    "title": "Fatigue fracture of an aircraft control link lug through a lubrication hole (Page 2)",
+    "explanation": "The diagram shows the original and improved designs of a fractured structural lug made of aluminum alloy 7075-T73. In the original design, fatigue cracking initiates at the sharp stress concentration of the lubrication hole, which is eliminated in the improved design by relocating and contouring the hole."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_3_Fig_1.png": {
+    "title": "Log-log S-N fatigue strength curve for UNS G41300 steel (Page 3)",
+    "explanation": "This log-log S-N diagram plots fatigue strength $S_f$ in kpsi against the number of stress cycles $N$ for completely reversed axial fatigue tests on normalized UNS G41300 steel. It clearly distinguishes between low-cycle and high-cycle finite life regimes before leveling off at the endurance limit $S_e$ near $10^6$ cycles."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_4_Fig_1.png": {
+    "title": "Endurance Limit Versus Tensile Strength for Steels (Page 4)",
+    "explanation": "This graph plots the endurance limit $S'_e$ against the tensile strength $S_{ut}$ for carbon steels, alloy steels, and wrought irons, showing linear proportionality up to 200 kpsi followed by a constant 100 kpsi limit. The plotted experimental data points and boundary lines illustrate the empirical relationships defined by the piecewise equation for steel fatigue strength."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_4_Fig_2.png": {
+    "title": "S-N fatigue strength bands for wrought and cast aluminum alloys (Page 4)",
+    "explanation": "This log-log plot shows peak alternating bending stress versus fatigue life cycles for wrought, permanent mold cast, and sand cast aluminum alloys. It illustrates that nonferrous metals lack a true endurance limit, so fatigue strength is reported at a specified life such as $N = 5 \\times 10^8$ cycles."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_5_Fig_1.png": {
+    "title": "Parameters for Calculating Surface Finish Factor in Fatigue Analysis (Page 5)",
+    "explanation": "This table provides empirical coefficients ($a$) and exponents ($b$) used to calculate the Marin surface finish modification factor ($k_a = a S_{ut}^b$) based on ultimate tensile strength and manufacturing process."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_5_Fig_2.png": {
+    "title": "Empirical Size Modification Factor Formulas for Round Rotating Members (Page 5)",
+    "explanation": "This image presents the piecewise mathematical equations and dimensional ranges used to determine the size factor, $k_b$, for fatigue endurance limit calculations in both inch and metric units. It also notes that for pure axial loading, the size effect is absent, resulting in a constant value of $k_b = 1$."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_5_Fig_3.png": {
+    "title": "Shigley endurance limit modification factors nomenclature definition list (Page 5)",
+    "explanation": "This image displays a detailed nomenclature list defining the correction factors used to calculate the actual endurance limit of a machine component from a rotary-beam test specimen value. It explicitly defines symbols $k_a$ through $k_f$, along with the baseline rotary-beam limit $S'_e$ and the modified application endurance limit $S_e$."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_6_Fig_1.png": {
+    "title": "0.95\u03c3 Stress Area Formulas for Nonrotating Structural Cross-Sections (Page 6)",
+    "explanation": "This table presents the effective 95-percent stress area ($A_{0.95\\sigma}$) and equivalent diameter ($d_e$) formulas for four nonrotating structural cross-sections: solid circles, rectangles, I-beams, and channels. It details distinct geometric equations corresponding to bending about specific principal axes (1-1 and 2-2) for fatigue analysis."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_7_Fig_1.png": {
+    "title": "Effect of Operating Temperature on Steel Yield and Ultimate Strength (Page 7)",
+    "explanation": "This text block describes a material property plot showing the ratio of elevated-temperature strength to room-temperature strength for 145 tests of carbon and alloy steels. It defines how yield strength ($S_y$) and ultimate strength ($S_{ut}$) are normalized against operating temperatures."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_7_Fig_2.png": {
+    "title": "Temperature-dependent strength reduction factors for structural carbon steels (Page 7)",
+    "explanation": "This plot illustrates the variation of normalized ultimate tensile strength ($S_{ut}$) and yield strength ($S_y$) as a function of temperature in degrees Celsius relative to room temperature values ($S_T/S_{RT}$). The curves show that while tensile strength can exhibit a slight initial increase before dropping, both mechanical properties progressively degrade at elevated operating temperatures."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_7_Fig_3.png": {
+    "title": "Temperature-dependent tensile strength ratio values for structural steel (Page 7)",
+    "explanation": "This table displays the ratio of tensile strength at elevated operating temperatures to room temperature ($S_T / S_{RT}$) for steel across Celsius and Fahrenheit scales. It shows how mechanical strength initially increases slightly up to 150\u00b0C before progressively degrading at higher thermal levels."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_12_Fig_1.png": {
+    "title": "Stress-time curves and parameter definitions for fatigue loading cycles (Page 12)",
+    "explanation": "The left column (a, b, c) illustrates different types of fluctuating stress-time histories including high-frequency ripple and non-sinusoidal waves. The right column (d, e, f) defines key fatigue parameters such as maximum stress ($\\sigma_{\\text{max}}$), minimum stress ($\\sigma_{\\text{min}}$), alternating stress ($\\sigma_a$), midrange stress ($\\sigma_m$), and stress range ($\\sigma_r$) for general, repeated, and reversed loading conditions."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_12_Fig_2.png": {
+    "title": "Presentation slide title for characterizing fluctuating stresses in fatigue analysis (Page 12)",
+    "explanation": "This image shows the header text for a lecture slide on characterizing fluctuating stresses in mechanical fatigue failure analysis. It displays the main presentation title indicating the topic of fluctuating stress components and their evaluation."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_12_Fig_3.png": {
+    "title": "Sinusoidal Fluctuating Stress Waveform Defining Stress Components (Page 12)",
+    "explanation": "This image illustrates a sinusoidal fluctuating stress-time history, defining key fatigue parameters including maximum stress, minimum stress, stress range, amplitude component, and midrange component. The formulas for calculating the midrange stress and amplitude component from the extreme stress values are also provided."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_13_Fig_2.png": {
+    "title": "Modified Goodman and Soderberg constant-life diagram for ductile materials (Page 13)",
+    "explanation": "This diagram illustrates how fluctuating uniaxial stresses relate to equal fatigue life by plotting alternating stress ($\\sigma_a$) against mean stress ($\\sigma_m$). It uses yield strength ($S_y$), ultimate tensile strength ($S_u$), and endurance limit ($S_n$) values derived from S-N curves to evaluate finite and infinite fatigue life across different stress lines ($10^3$ to $10^6$ cycles)."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_13_Fig_3.png": {
+    "title": "Comparison of various fluctuating uniaxial stress states with equal fatigue life (Page 13)",
+    "explanation": "This diagram illustrates six different fluctuating stress profiles (a through f) having varying alternating stress ($\\sigma_a$) and mean stress ($\\sigma_m$) components that all correspond to the same constant fatigue life. Key labels include the ultimate tensile strength ($S_u$), yield strength ($S_y$), and endurance limit ($S_n$) plotted on a time-stress graph."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_14_Fig_1.png": {
+    "title": "Modified Goodman fatigue failure diagram with S-N curve (Page 14)",
+    "explanation": "This diagram illustrates fatigue failure criteria for fluctuating stresses by combining an S-N curve with a modified Goodman diagram showing alternating stress versus midrange stress. It displays yield lines, load lines with slope $\\frac{\\sigma_a}{\\sigma_m} = 0.67$, and specific intersection points corresponding to fatigue lives of $10^3$, $10^4$, $10^5$, and $10^6$ cycles."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_14_Fig_3.png": {
+    "title": "Title slide for fatigue failure criteria under fluctuating stress (Page 14)",
+    "explanation": "This image displays the main title header for a lecture presentation on fatigue failure criteria for fluctuating stresses. It introduces the topic covered within the engineering slide deck regarding component lifespan under cyclic loading."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_15_Fig_1.png": {
+    "title": "Normalized Fatigue Strength Amplitude Versus Compression and Tension Midrange Ratios (Page 15)",
+    "explanation": "This plot compares experimental fatigue failure data for steels across both compressive and tensile midrange stress ratios, using the amplitude ratio on the vertical axis against the normalized midrange stress on the horizontal axis. Key transition points labeled A, B, and C mark the boundaries between different empirical fatigue failure criteria, such as the modified Goodman line and the compressive cutoff limit."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_16_Fig_2.png": {
+    "title": "Three-dimensional fatigue failure surface relating alternating stress, mean stress, and cycles (Page 16)",
+    "explanation": "This illustration shows the 3D interaction surface between alternating stress ($\\sigma_a$), mean stress ($\\sigma_m$), and fatigue life ($N$), along with its projections into the $\\sigma_a-N$ (S-N diagrams) and $\\sigma_a-\\sigma_m$ (Goodman diagram via section G-G) planes. It demonstrates how fatigue strength limits degrade under combined mean and fluctuating stress states across different cycles to failure."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_17_Fig_1.png": {
+    "title": "Soderberg and Goodman Fatigue Failure Diagram for Fluctuating Stresses (Page 17)",
+    "explanation": "This engineering diagram illustrates the fatigue failure criteria using mean stress ($\\sigma_m$) and alternating stress ($\\sigma_a$) axes, showing the load line intersecting the failure envelope at point Z to determine the factor of safety. The shaded safe region is bounded by fatigue strength ($S_e$ or $S_f$), yield strength ($S_y$), and ultimate tensile strength ($S_{ut}$)."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_17_Fig_2.png": {
+    "title": "Modified Goodman Fatigue Failure Diagram with Constant Alternating Stress Loading Line (Page 17)",
+    "explanation": "This diagram illustrates the modified Goodman fatigue criterion, plotting alternating stress versus mean stress with axes labeled $\\sigma_a$ and $\\sigma_m$ alongside fatigue limits $S_e$ and ultimate tensile strength $S_{ut}$. It demonstrates how a specific loading path ($OZ$) determines the factor of safety under fluctuating stresses where mean stress varies while alternating stress remains constant."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_17_Fig_3.png": {
+    "title": "Goodman and Soderberg Fatigue Failure Diagram with Load Line (Page 17)",
+    "explanation": "This diagram illustrates fatigue failure criteria under fluctuating stresses, plotting alternating stress versus mean stress with labeled points $C$, $D$, $E$, $F$, $R$, and a load line extending to $S_y$. It shows the safe operating region shaded in grey bounded by fatigue strength $S_e$ or $S_f$, yield strength $S_y$, and ultimate tensile strength $S_{ut}$."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_18_Fig_1.png": {
+    "title": "Modified Goodman Fatigue Failure Diagram with Independent Stress Components (Page 18)",
+    "explanation": "This diagram illustrates fatigue failure criteria on a Goodman-Soderberg plot, showing alternating stress versus midrange stress axes, a load line, and yield limit boundaries. It demonstrates how independent variations of alternating and midrange stresses intersect failure curves to determine safety margins."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_18_Fig_2.png": {
+    "title": "Modified Goodman and Soderberg Fatigue Failure Criterion Diagram (Page 18)",
+    "explanation": "This image illustrates a combined stress-state fatigue diagram showing alternating stress versus mean stress, with multiple failure criteria lines corresponding to different safety factors ($N_f$). White circles denote potential failure points along various load-line trajectories originating from the operating stress state toward material limits such as endurance limit ($S_e$), yield strength ($S_y$), and ultimate strength ($S_{ut}$)."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_19_Fig_1.png": {
+    "title": "Rainflow cycle counting method for complex variable amplitude loading (Page 19)",
+    "explanation": "This diagram illustrates the rainflow counting algorithm applied to a complex fluctuating stress history to extract individual closed hysteresis loops for cumulative fatigue damage analysis. Part (a) shows the sequential peaks and valleys, while part (b) demonstrates the identification and extraction of cycles and half-cycles for damage summation rules like Miner's rule."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_20_Fig_1.png": {
+    "title": "S-N Fatigue Curve Modification Using Miner's Cumulative Damage Rule (Page 20)",
+    "explanation": "This log-log fatigue diagram illustrates how applying $n_1$ cycles at an overstress level $\\sigma_1$ reduces the material's endurance limit from $S'_{e,0}$ to $S'_{e,1}$ based on Miner's rule. The damaged fatigue strength curve (dashed) is shifted downward parallel to the original curve (solid) while assuming static strength $0.9S_{ut}$ is also degraded."
+  },
+  "extracted_figures\\Rolling stock FAILURE ANALYSIS-metallurgical perspective_Page_47_Fig_1.png": {
+    "title": "Logarithmic S-N Fatigue Curves Showing Ferrous Endurance Limit (Page 47)",
+    "explanation": "This logarithmic plot illustrates stress amplitude versus number of cycles, comparing a material with a distinct endurance limit (blue curve) that flattens out to infinite life against one without (red curve)."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_2_Fig_7.png": {
+    "title": "Macro-fracture surface of a threaded fastener showing fatigue beach marks (Page 2)",
+    "explanation": "This macrograph displays the cross-section of a threaded bolt fracture surface, highlighting radial fatigue crack propagation lines (beach marks) emanating from stress concentrations at the thread root. The arrows point to specific crack initiation sites and progression fronts leading up to the final overload failure zone."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_7_Fig_4.png": {
+    "title": "Reliability Factors $k_e$ for Endurance Limit Standard Deviation (Page 7)",
+    "explanation": "This slide header introduces the specific reliability factor parameters $k_e$ corresponding to an eight percent standard deviation of the endurance limit. It sets up the probabilistic fatigue design criteria used to adjust endurance limits for desired structural reliability levels."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_7_Fig_5.png": {
+    "title": "Reliability Factors and Transformation Variates for Fatigue Strength (Page 7)",
+    "explanation": "This table lists the standard reliability factors ($k_e$) corresponding to various percentage reliability levels and their associated standard normal transformation variates ($z_a$). It is used in fatigue design calculations to adjust the endurance limit for desired levels of statistical reliability."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_8_Fig_1.png": {
+    "title": "Stress Distribution and Fatigue Strength in Case-Hardened Components (Page 8)",
+    "explanation": "This diagram illustrates the bending or torsional stress gradient ($\\sigma$ or $\\tau$) relative to the varying fatigue limits of the surface layer ($S_e(\\text{case})$) and the inner region ($S_e(\\text{core})$). Because the applied stress exceeds the endurance limit of the core at the interface, the failure mechanism originates and propagates within the core material rather than the case."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_9_Fig_1.png": {
+    "title": "Stress-concentration factor charts for plates with central holes under tension and bending (Page 9)",
+    "explanation": "These graphs display the theoretical stress-concentration factor $K_t$ as a function of the hole-to-width ratio $d/w$ for rectangular plates subjected to axial tension $F$ and bending moments $M$. The lower-right plot further parameterizes the bending curves by the hole-diameter-to-thickness ratio $d/h$, ranging from $0$ to $\\infty$."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_11_Fig_1.png": {
+    "title": "Notch sensitivity curves for steels and aluminum alloys (Page 11)",
+    "explanation": "This chart plots notch sensitivity $q$ against notch radius $r$ in both millimeters and inches for various ultimate tensile strengths of steels and aluminum alloys. It is used to determine the fatigue notch factor $K_f$ by correlating material strength and notch geometry under reversed loading conditions."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_11_Fig_2.png": {
+    "title": "Notch sensitivity curves for steels and aluminum alloys in torsion (Page 11)",
+    "explanation": "This chart plots shear notch sensitivity $q_{\\text{shear}}$ against notch radius $r$ in both millimeters and inches for various ultimate tensile strengths $S_{ut}$. It demonstrates how notch sensitivity increases with larger radii and higher material strength levels for steels and aluminum alloys under torsional loading."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_13_Fig_1.png": {
+    "title": "Sinusoidal Fluctuating Stress Waveform and Component Formulas (Page 13)",
+    "explanation": "This diagram illustrates a sinusoidal fluctuating stress cycle over time, labeling the key parameters including maximum stress, minimum stress, midrange component, amplitude, and stress range. It also provides the mathematical formulas used to calculate the midrange stress component ($\\sigma_m$) and the amplitude component ($\\sigma_a$) from the extreme stress values."
+  },
+  "extracted_figures\\slides_failurefatigue_Page_21_Fig_1.png": {
+    "title": "Cumulative Fatigue Damage S-N Diagram with Stress Levels and Cycles (Page 21)",
+    "explanation": "This logarithmic S-N diagram illustrates cumulative fatigue damage analysis using Miner's rule, showing stress levels like 60 kpsi, cycles such as $n_1 = 3(10^3)$ and $N_1 = 8.52(10^3)$, and fatigue limits $S_{e,0}'$ and $S_{e,1}'$. It depicts how fatigue lines converge at $0.9S_{ut}$ at $10^3$ cycles to evaluate progressive component degradation under varying stress amplitudes."
+  }
+}
